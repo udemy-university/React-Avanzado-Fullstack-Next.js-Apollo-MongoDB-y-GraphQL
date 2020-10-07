@@ -1,0 +1,29 @@
+GraphQL esta pensado en performance. Se enfoca en utilizar solamente los datos que necesitamos.
+Hay una sola url y se hacen muchas consultas.
+
+Servidores GraphQL
+- Apollo Servidor
+- GraphQL Yoga
+- Apollo Server Express (node js)
+- Servicio de amplify (AWS) soporta GraphQL.
+
+Apollo
+- Plataforma que te permitirá trabajar con GraphQL.
+	- Apollo Server (escribir y consultar BD).
+	- Apollo Client (mostrar resultados).
+
+
+Query
+	- Leer registros. (Similar a un get de REST API).
+
+Mutation
+	- Actualizar, eliminar y crear registros. (Similar a un put/patch, delete o post de REST API).
+
+Resolver
+	- Describe tipos de objetos, queries y datos de tu aplicación. Query es el único obligatorio en tu Schema, puede ser tipo string, int, boolean u otro tipo de dato. 
+	- Comunicación con el lenguaje del servidor y la BD.
+	- Son funciones que son responsables de retornar los valores que existen en tu Schema.
+	- Los nombres de los resolvers deben ser iguales a los definidos en el Schema.
+
+Schema
+	- Define la forma de los datos.

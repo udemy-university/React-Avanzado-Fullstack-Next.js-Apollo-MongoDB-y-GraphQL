@@ -1,0 +1,26 @@
+{
+  "name": "crm-graphql-course",
+  "version": "1.0.0",
+  "description": "Curso de GraphQL",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/udemy-university/React-Avanzado-Fullstack-Next.js-Apollo-MongoDB-y-GraphQL.git"
+  },
+  "author": "Sandro Dezerio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/udemy-university/React-Avanzado-Fullstack-Next.js-Apollo-MongoDB-y-GraphQL/issues"
+  },
+  "homepage": "https://github.com/udemy-university/React-Avanzado-Fullstack-Next.js-Apollo-MongoDB-y-GraphQL#readme",
+  "dependencies": {
+    "apollo-server": "^2.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
