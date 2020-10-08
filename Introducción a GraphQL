@@ -27,3 +27,5 @@ Resolver
 
 Schema
 	- Define la forma de los datos.
+
+Tipos de datos en GraphQL: int, float, string, id, boolean

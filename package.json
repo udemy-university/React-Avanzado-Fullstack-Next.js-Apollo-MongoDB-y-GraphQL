@@ -18,7 +18,10 @@
   },
   "homepage": "https://github.com/udemy-university/React-Avanzado-Fullstack-Next.js-Apollo-MongoDB-y-GraphQL#readme",
   "dependencies": {
-    "apollo-server": "^2.18.2"
+    "apollo-server": "^2.18.2",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^8.2.0",
+    "mongoose": "^5.10.8"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"

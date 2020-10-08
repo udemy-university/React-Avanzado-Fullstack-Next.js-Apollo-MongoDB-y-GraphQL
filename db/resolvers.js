@@ -1,28 +1,37 @@
+const Usuario = require('../models/Usuario');
+const bcryptjs = require('bcryptjs');
+
 // Resolvers
 const resolvers = {
 	Query: {
-		obtenerCursos: () => cursos,
-		obtenerTecnologia: () => cursos
+		obtenerCurso: () => "Hola"
+	},
+	Mutation: {
+		nuevoUsuario: async (_, { input } ) => {			
+			const { email, password } = input;
+
+			// Revisar si el usuario ya está registrado
+			const existeUsuario = await Usuario.findOne({email});
+			if(existeUsuario) {
+				throw new Error('El usuario ya existe.');
+			}
+
+			// Hashear password
+			const salt = bcryptjs.genSaltSync(10);
+			input.password = bcryptjs.hashSync(password, salt);
+
+			try {
+				// Guardar en la BD
+				const usuario = new Usuario(input);
+				usuario.save(); // Guardarlo
+				return usuario;
+			} catch(error) {
+				console.log(error);
+			}
+		}
 	}
 }
 
-const cursos = [
-    {
-        titulo: 'JavaScript Moderno Guía Definitiva Construye +10 Proyectos',
-        tecnologia: 'JavaScript ES6',
-    },
-    {
-        titulo: 'React – La Guía Completa: Hooks Context Redux MERN +15 Apps',
-        tecnologia: 'React',
-    },
-    {
-        titulo: 'Node.js – Bootcamp Desarrollo Web inc. MVC y REST API’s',
-        tecnologia: 'Node.js'
-    }, 
-    {
-        titulo: 'ReactJS Avanzado – FullStack React GraphQL y Apollo',
-        tecnologia: 'React'
-    }
-];
+
 
 module.exports = resolvers;
